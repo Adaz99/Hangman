@@ -1,15 +1,8 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Game {
-    private static ArrayList<String> wordList = new ArrayList<>();
 
-    static {
-        "wolf",
-        "destruction",
-        "lineage",
-        "confusion",
-        "staff",
-    };
 }
