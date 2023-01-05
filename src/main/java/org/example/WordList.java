@@ -16,7 +16,6 @@ public class WordList {
         wordList.add("sweet");
         wordList.add("gloom");
         wordList.add("reptile");
-        wordList.add("reptile");
     };
 
     public static String generateRandomWord(){
