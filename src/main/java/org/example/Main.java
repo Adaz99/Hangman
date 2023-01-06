@@ -1,12 +1,22 @@
 package org.example;
 
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
+
+    // have to use static because the methods are also static
+
     public static void main(String[] args) {
-        for (int i = 0; i < WordList.generateRandomWord().length() ; i++) {
-            System.out.println("_");
-            
-        }
-        
-        System.out.println(WordList.generateRandomWord());
+    Game game = new Game();
+    game.start();
+
+
     }
+
+
+
+
 }

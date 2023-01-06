@@ -18,8 +18,10 @@ public class WordList {
         wordList.add("reptile");
     };
 
+
     public static String generateRandomWord(){
         return wordList.get(RANDOM.nextInt(wordList.size()));
     }
+
 
 }
