@@ -20,8 +20,9 @@ public class Game {
         char c = userInput.next().charAt(0);
         for (int i = 0; i < a.length(); i++) {
             if (c == a.charAt(i)) {
-                answer[i] = c;
                 count++;
+                answer[i] = c;
+
             }
         }
         System.out.println("You entered: " + c);
@@ -47,14 +48,12 @@ public class Game {
         String temp = "_".repeat(a.length());
         answer = temp.toCharArray();
         System.out.println("Welcome to the Hangman game! Enter a character to start");
-        System.out.println("You have " + lives + " lives left.");
         turn();
     }
 
     public void endGame() {
         System.out.println("Game over no lifes left!");
         System.exit(0);
-
     }
 
     public void winner() {
