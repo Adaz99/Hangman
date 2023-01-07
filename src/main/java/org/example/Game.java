@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class Game {
     String a;
-    String changeWord;
     char answer[];
-    int lives = 8;
+    int lives = 6;
+
 
     Scanner userInput = new Scanner(System.in);
 
@@ -24,10 +24,15 @@ public class Game {
                 answer[i] = c;
 
             }
+
         }
-        System.out.println("You entered: " + c);
+        System.out.println( "You entered: " + c);
         System.out.println(answer);
 
+        if (a.equals(new String(answer))) {
+            winner();
+            System.exit(0);
+        }
 
         if (count == 0) {
             lives--;
@@ -57,7 +62,7 @@ public class Game {
     }
 
     public void winner() {
-        System.out.println("Game complete, WINNER!!!");
+        System.out.println("WINNER, WINNER, CHICKEN DINNER!!!");
     }
 }
 
