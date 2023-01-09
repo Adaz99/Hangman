@@ -17,7 +17,7 @@ public class Game {
 
         System.out.print("Enter a character: ");
 
-        char c = userInput.next().charAt(0);
+        char c = userInput.next().toLowerCase().charAt(0);
         for (int i = 0; i < a.length(); i++) {
             if (c == a.charAt(i)) {
                 count++;
@@ -31,7 +31,7 @@ public class Game {
 
         if (a.equals(new String(answer))) {
             winner();
-            System.exit(0);
+
         }
 
         if (count == 0) {
@@ -63,6 +63,7 @@ public class Game {
 
     public void winner() {
         System.out.println("WINNER, WINNER, CHICKEN DINNER!!!");
+        System.exit(0);
     }
 }
 
