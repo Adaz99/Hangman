@@ -5,9 +5,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
+    public static int lives = 5;
     String a;
     char answer[];
-    int lives = 6;
+//    int lives = 5;
+    ArrayList<Character> usedLetters = new ArrayList<>();
 
 
     Scanner userInput = new Scanner(System.in);
@@ -15,37 +17,41 @@ public class Game {
     private void turn() {
         int count = 0;
 
+
+
         System.out.print("Enter a character: ");
-
         char c = userInput.next().toLowerCase().charAt(0);
-        for (int i = 0; i < a.length(); i++) {
-            if (c == a.charAt(i)) {
-                count++;
-                answer[i] = c;
+        if (usedLetters.contains(c)) {
+            System.out.println("You have already used this letter. Please enter a different letter.");
+            turn();
+        } else {
+            usedLetters.add(c);
+            for (int i = 0; i < a.length(); i++) {
+                if (c == a.charAt(i)) {
+                    count++;
+                    answer[i] = c;
+                }
+            }
+            System.out.println("You entered: " + c);
+            System.out.println(answer);
 
+            if (a.equals(new String(answer))) {
+                winner();
             }
 
-        }
-        System.out.println( "You entered: " + c);
-        System.out.println("Correct!");
-        System.out.println(answer);
-
-        if (a.equals(new String(answer))) {
-            winner();
-        }
-
-        if (count == 0) {
-            lives--;
-            System.out.println("Wrong guess!" + " You have " + lives + " lives left.");
-            if (lives == 0) {
-                endGame();
+            if (count == 0) {
+                lives--;
+                System.out.println("Wrong guess!" + " You have " + lives + " lives left.");
+                Picture.hangingMan();
+                if (lives == 0) {
+                    endGame();
+                } else {
+                    turn();
+                }
             } else {
                 turn();
             }
-            } else {
-            turn();
-            }
-
+        }
     }
 
     public void start() {
@@ -71,6 +77,7 @@ public class Game {
         char c = userInput.next().toLowerCase().charAt(0);
         if (c == 'y'){
             lives =6;
+            usedLetters.clear();
             start();
         } else {
             System.out.println("Thanks for playing!");
