@@ -27,11 +27,11 @@ public class Game {
 
         }
         System.out.println( "You entered: " + c);
+        System.out.println("Correct!");
         System.out.println(answer);
 
         if (a.equals(new String(answer))) {
             winner();
-
         }
 
         if (count == 0) {
@@ -58,12 +58,24 @@ public class Game {
 
     public void endGame() {
         System.out.println("Game over no lifes left!");
-        System.exit(0);
+        playAgain();
     }
 
     public void winner() {
         System.out.println("WINNER, WINNER, CHICKEN DINNER!!!");
-        System.exit(0);
+        playAgain();
+    }
+
+    public void playAgain(){
+        System.out.println("Would you like to play another game? (y/n)");
+        char c = userInput.next().toLowerCase().charAt(0);
+        if (c == 'y'){
+            lives =6;
+            start();
+        } else {
+            System.out.println("Thanks for playing!");
+            System.exit(0);
+        }
     }
 }
 
