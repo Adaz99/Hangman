@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-    public static int lives = 5;
+    public static int lives = 6;
     String a;
     char answer[];
 //    int lives = 5;
@@ -63,12 +63,12 @@ public class Game {
     }
 
     public void endGame() {
-        System.out.println("Game over no lifes left!");
+        System.out.println("❌ Game over no lifes left! ❌");
         playAgain();
     }
 
     public void winner() {
-        System.out.println("WINNER, WINNER, CHICKEN DINNER!!!");
+        System.out.println(" \uD83C\uDFC6 WINNER, WINNER, CHICKEN DINNER!!! \uD83C\uDFC6");
         playAgain();
     }
 
